@@ -84,7 +84,7 @@ public class ProductsController {
     })
     @GetMapping("/page/{page}")
     public ResponseEntity<Page<ProductResource>> getProducts(@PathVariable int page) {
-        Pageable pageable = PageRequest.of(page,5);
+        Pageable pageable = PageRequest.of(page,10);
         Page<Product> products = productQueryService.handle(pageable);
 
         Page<ProductResource> productResources = products.map(ProductResourceFromEntityAssembler::toResourceFromEntity);
