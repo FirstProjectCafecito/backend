@@ -27,6 +27,10 @@ public class Role {
 
     public static Role getDefaultRole(){ return new Role(Roles.USER);}
 
+    public static Role toRoleFromName(String name){
+        return new Role(Roles.valueOf(name));
+    }
+
     public static List<Role> validateRoleSet(List<Role> roles){
         return roles == null || roles.isEmpty() ? List.of(getDefaultRole()) : roles;
     }
