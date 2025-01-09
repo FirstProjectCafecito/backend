@@ -6,10 +6,12 @@ import com.demo.searchengine.iam.domain.model.queries.GetUserByIdQuery;
 import com.demo.searchengine.iam.domain.model.queries.GetUserByUsernameQuery;
 import com.demo.searchengine.iam.domain.services.UserQueryService;
 import com.demo.searchengine.iam.insfrastructure.persistence.jpa.repositories.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserQueryServiceImpl implements UserQueryService {
     private final UserRepository userRepository;
 
